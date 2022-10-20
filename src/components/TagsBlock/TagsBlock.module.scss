@@ -1,0 +1,55 @@
+.tagsBlock {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+
+  .title {
+    height: 30px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-left: 20px;
+  }
+
+  .tags {
+    overflow-x: hidden;
+    background-color: #f4ede4;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 250px;
+
+    .tag {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      cursor: pointer;
+      h2 {
+        margin-right: 20px;
+      }
+      p {
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        p {
+          transform: translate(3px);
+        }
+        background-color: darken($color: #f4ede4, $amount: 5);
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .tagsBlock {
+    margin: 0;
+    margin-bottom: 20px;
+
+    .tags {
+      width: 100%;
+    }
+  }
+}

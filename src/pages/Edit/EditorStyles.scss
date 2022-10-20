@@ -1,0 +1,10 @@
+.CodeMirror,
+.editor-preview {
+  background-color: lighten($color: #f4ede4, $amount: 2) !important;
+  border: 0 !important;
+}
+
+.editor-toolbar {
+  border: 0 !important;
+  background-color: #f4ede4 !important;
+}

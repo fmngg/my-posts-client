@@ -1,0 +1,43 @@
+.header {
+  width: 100vw;
+  background-color: #f4ede4;
+  display: flex;
+  justify-content: center;
+  padding: 7px 0px;
+  margin-bottom: 50px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateX(3px);
+      }
+      p {
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+
+    .buttons {
+      img {
+        cursor: pointer;
+        width: 35px;
+        margin-left: 20px;
+        padding: 5px;
+        border-radius: 5px;
+        // background-color: darken($color: #f4ede4, $amount: 5);
+
+        &:hover {
+          background-color: darken($color: #f4ede4, $amount: 10);
+        }
+      }
+    }
+  }
+}

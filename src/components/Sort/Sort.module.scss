@@ -1,0 +1,21 @@
+.sort {
+  display: flex;
+  height: 30px;
+  margin-bottom: 15px;
+
+  p {
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 17px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .active {
+    color: #319795;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+}

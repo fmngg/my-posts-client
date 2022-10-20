@@ -1,0 +1,120 @@
+.post {
+  display: flex;
+  justify-content: center;
+
+  .postBlock {
+    background-color: #f4ede4;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    position: relative;
+
+    .editButton {
+      position: absolute;
+      display: flex;
+      bottom: 20px;
+      right: 20px;
+      width: 75px;
+      justify-content: space-between;
+
+      img {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        z-index: 1;
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .delete {
+        background-color: #ff384f;
+      }
+    }
+
+    .imageBlock {
+      width: 100%;
+      height: fit-content;
+      max-height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .content {
+      padding: 20px;
+
+      .info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        align-items: center;
+        .userInfo {
+          display: flex;
+          align-items: center;
+
+          .avatar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            background-color: #319795;
+            font-weight: 500;
+            color: white;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+
+          .about {
+            display: flex;
+            flex-direction: column;
+
+            .date {
+              color: #b0b0b0;
+            }
+          }
+        }
+
+        .views {
+          color: #b0b0b0;
+        }
+      }
+
+      .title {
+        margin-bottom: 10px;
+      }
+
+      .tags {
+        display: flex;
+        color: #b0b0b0;
+        margin-bottom: 20px;
+
+        p {
+          margin-right: 10px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: darken($color: #f4ede4, $amount: 10);
+          }
+        }
+      }
+    }
+  }
+}

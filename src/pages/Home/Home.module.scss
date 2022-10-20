@@ -1,0 +1,32 @@
+.home {
+  display: flex;
+  justify-content: center;
+
+  .content {
+    display: flex;
+
+    .posts {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+}
+
+@media (max-width: 680px) {
+  .home {
+    .content {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}
