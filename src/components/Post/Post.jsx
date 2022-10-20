@@ -18,7 +18,10 @@ const Post = ({ name, date, views, title, tags, id, image, userId, myId }) => {
     <div className={styles.post}>
       {image && (
         <div className={styles.imageBlock}>
-          <img src={`http://localhost:4000${image}`} alt="Post Img" />
+          <img
+            src={`${process.env.REACT_APP_API_URL}${image}`}
+            alt="Post Img"
+          />
         </div>
       )}
       {userId === myId ? (

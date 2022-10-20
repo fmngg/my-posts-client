@@ -49,7 +49,7 @@ const Post = () => {
                 {post.image && (
                   <div className={styles.imageBlock}>
                     <img
-                      src={`http://localhost:4000${post.image}`}
+                      src={`${process.env.REACT_APP_API_URL}${post.image}`}
                       alt="Post Img"
                     />
                   </div>

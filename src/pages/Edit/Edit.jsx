@@ -126,7 +126,10 @@ const Edit = () => {
                   alt="Delete Post"
                 />
               </div>
-              <img src={`http://localhost:4000${image}`} alt="Post Img" />
+              <img
+                src={`${process.env.REACT_APP_API_URL}${image}`}
+                alt="Post Img"
+              />
             </div>
           )}
           <input
