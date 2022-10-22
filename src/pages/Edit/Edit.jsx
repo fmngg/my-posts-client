@@ -82,7 +82,7 @@ const Edit = () => {
       spellChecker: false,
       maxHeight: "300px",
       autofocus: true,
-      placeholder: "Write your thoughts...",
+      placeholder: "Write your thoughts at least in 10 words...",
       autosave: {
         enabled: true,
         delay: 1000,
@@ -138,6 +138,7 @@ const Edit = () => {
             type="text"
             className={styles.title}
             placeholder="Title"
+            maxLength={3}
           />
           <input
             value={tags}

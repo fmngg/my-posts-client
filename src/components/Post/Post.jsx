@@ -31,7 +31,7 @@ const Post = ({ name, date, views, title, tags, id, image, userId, myId }) => {
           </Link>
           <img
             onClick={() => {
-              dispatch(deletePost(id));
+              confirm('Press "ok" to delete') ? dispatch(deletePost(id)) : null;
             }}
             className={styles.delete}
             src={trash}

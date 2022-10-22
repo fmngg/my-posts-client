@@ -36,74 +36,73 @@ const Post = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  if (isLoading) {
+    return <img className="loader" src={loader} alt="Loader" />;
+  }
+
   return (
     <>
-      {isLoading ? (
-        <img className="loader" src={loader} alt="Loader" />
-      ) : (
-        <>
-          <Header />
-          <div className={styles.post}>
-            <div className="wrapper">
-              <div className={styles.postBlock}>
-                {post.image && (
-                  <div className={styles.imageBlock}>
-                    <img
-                      src={`${process.env.REACT_APP_API_URL}${post.image}`}
-                      alt="Post Img"
-                    />
+      <Header />
+      <div className={styles.post}>
+        <div className="wrapper">
+          <div className={styles.postBlock}>
+            {post.image && (
+              <div className={styles.imageBlock}>
+                <img
+                  src={`${process.env.REACT_APP_API_URL}${post.image}`}
+                  alt="Post Img"
+                />
+              </div>
+            )}
+            {user?._id === post.user._id ? (
+              <div className={styles.editButton}>
+                <Link to={`/posts/${id}/edit`}>
+                  <img src={edit} alt="Edit Post" />
+                </Link>
+                <img
+                  onClick={() => {
+                    confirm('Press "ok" to delete')
+                      ? dispatch(deletePost(id)) && navigate(`/`)
+                      : null;
+                  }}
+                  className={styles.delete}
+                  src={trash}
+                  alt="Delete Post"
+                />
+              </div>
+            ) : null}
+            <div className={styles.content}>
+              <div className={styles.info}>
+                <div className={styles.userInfo}>
+                  <div className={styles.avatar}>
+                    {post.user.nickname.slice("")[0]}
+                    {/* <img src={test} /> */}
                   </div>
-                )}
-                {user?._id === post.user._id ? (
-                  <div className={styles.editButton}>
-                    <Link to={`/posts/${id}/edit`}>
-                      <img src={edit} alt="Edit Post" />
-                    </Link>
-                    <img
-                      onClick={() => {
-                        dispatch(deletePost(id));
-                        navigate(`/`);
-                      }}
-                      className={styles.delete}
-                      src={trash}
-                      alt="Delete Post"
-                    />
-                  </div>
-                ) : null}
-                <div className={styles.content}>
-                  <div className={styles.info}>
-                    <div className={styles.userInfo}>
-                      <div className={styles.avatar}>
-                        {post.user.nickname.slice("")[0]}
-                        {/* <img src={test} /> */}
-                      </div>
-                      <div className={styles.about}>
-                        <div className={styles.name}>{post.user.nickname}</div>
-                        <div className={styles.date}>{date}</div>
-                      </div>
-                    </div>
-                    <div className={styles.views}>
-                      <p>{post.views} views</p>
-                    </div>
-                  </div>
-                  <div className={styles.title}>
-                    <h1>{post.title}</h1>
-                  </div>
-                  <div className={styles.tags}>
-                    {post.tags.map((obj, index) => (
-                      <p key={index}>#{obj}</p>
-                    ))}
-                  </div>
-                  <div className={styles.text}>
-                    <ReactMarkdown>{post.text}</ReactMarkdown>
+                  <div className={styles.about}>
+                    <div className={styles.name}>{post.user.nickname}</div>
+                    <div className={styles.date}>{date}</div>
                   </div>
                 </div>
+                <div className={styles.views}>
+                  <p>{post.views} views</p>
+                </div>
+              </div>
+              <div className={styles.title}>
+                <h1>{post.title}</h1>
+              </div>
+              <div className={styles.tags}>
+                {post.tags.map((obj, index) => (
+                  <p key={index}>#{obj}</p>
+                ))}
+              </div>
+              <div className={styles.text}>
+                <ReactMarkdown>{post.text}</ReactMarkdown>
               </div>
             </div>
           </div>
-          <Footer />
-        </>
-      )}
+        </div>
+      </div>
+      <Footer />
     </>
   );
 };
