@@ -65,9 +65,7 @@ const Post = ({ name, date, views, title, tags, id, image, userId, myId }) => {
           </Link>
         </div>
         <div className={styles.tags}>
-          {tags.map((obj, index) => (
-            <p key={index}>#{obj}</p>
-          ))}
+          {tags.map((obj, index) => (obj ? <p key={index}>#{obj}</p> : null))}
         </div>
       </div>
     </div>
