@@ -96,9 +96,9 @@ const Post = () => {
                 <h1>{post.title}</h1>
               </div>
               <div className={styles.tags}>
-                {post.tags.map((obj, index) => (
-                  <p key={index}>#{obj}</p>
-                ))}
+                {post.tags.map((obj, index) =>
+                  obj ? <p key={index}>#{obj}</p> : null
+                )}
               </div>
               <div className={styles.text}>
                 <ReactMarkdown>{post.text}</ReactMarkdown>
