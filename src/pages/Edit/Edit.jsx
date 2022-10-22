@@ -23,7 +23,7 @@ const Edit = () => {
   const navigate = useNavigate();
   const inputFileRef = React.useRef();
   const [title, setTitle] = React.useState("");
-  const [tags, setTags] = React.useState([]);
+  const [tags, setTags] = React.useState("");
   const [text, setText] = React.useState("");
   const [image, setImage] = React.useState("");
 
@@ -82,7 +82,7 @@ const Edit = () => {
       spellChecker: false,
       maxHeight: "300px",
       autofocus: true,
-      placeholder: "Write your thoughts at least in 10 words...",
+      placeholder: "Write your thoughts...",
       autosave: {
         enabled: true,
         delay: 1000,
