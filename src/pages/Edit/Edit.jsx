@@ -96,7 +96,7 @@ const Edit = () => {
   }
 
   return (
-    <form className={styles.edit}>
+    <div className={styles.edit}>
       <Header />
       <div className="wrapper">
         <div className={styles.inputFileContainer}>
@@ -138,7 +138,6 @@ const Edit = () => {
             type="text"
             className={styles.title}
             placeholder="Title"
-            maxLength={3}
           />
           <input
             value={tags}
@@ -159,7 +158,7 @@ const Edit = () => {
         {id ? "Save" : "Create"}
       </button>
       <Footer />
-    </form>
+    </div>
   );
 };
 
