@@ -96,7 +96,7 @@ const Edit = () => {
   }
 
   return (
-    <div className={styles.edit}>
+    <form className={styles.edit}>
       <Header />
       <div className="wrapper">
         <div className={styles.inputFileContainer}>
@@ -159,7 +159,7 @@ const Edit = () => {
         {id ? "Save" : "Create"}
       </button>
       <Footer />
-    </div>
+    </form>
   );
 };
 

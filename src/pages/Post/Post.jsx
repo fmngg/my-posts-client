@@ -25,6 +25,15 @@ const Post = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const deleteHandler = () => {
+    const check = window.confirm('Press "ok" to delete');
+
+    if (check) {
+      dispatch(deletePost(id));
+      navigate(`/`);
+    }
+  };
+
   React.useEffect(() => {
     axios
       .get(`/posts/${id}`)
@@ -60,11 +69,7 @@ const Post = () => {
                   <img src={edit} alt="Edit Post" />
                 </Link>
                 <img
-                  onClick={() => {
-                    confirm('Press "ok" to delete')
-                      ? dispatch(deletePost(id)) && navigate(`/`)
-                      : null;
-                  }}
+                  onClick={deleteHandler}
                   className={styles.delete}
                   src={trash}
                   alt="Delete Post"

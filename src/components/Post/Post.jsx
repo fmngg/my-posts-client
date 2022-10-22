@@ -14,6 +14,14 @@ const Post = ({ name, date, views, title, tags, id, image, userId, myId }) => {
   const dispatch = useDispatch();
   const newDate = new Date(date).toDateString();
 
+  const deleteHandler = () => {
+    const check = window.confirm('Press "ok" to delete');
+
+    if (check) {
+      dispatch(deletePost(id));
+    }
+  };
+
   return (
     <div className={styles.post}>
       {image && (
@@ -30,9 +38,7 @@ const Post = ({ name, date, views, title, tags, id, image, userId, myId }) => {
             <img src={edit} alt="Edit Post" />
           </Link>
           <img
-            onClick={() => {
-              confirm('Press "ok" to delete') ? dispatch(deletePost(id)) : null;
-            }}
+            onClick={deleteHandler}
             className={styles.delete}
             src={trash}
             alt="Delete Post"
