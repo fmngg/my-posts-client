@@ -11,8 +11,8 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const [values, setValues] = React.useState({
-    email: "ilyafomin9283@mail.ru",
-    password: "12345678",
+    email: "",
+    password: "",
   });
 
   const onSubmit = async (e) => {

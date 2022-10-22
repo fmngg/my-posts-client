@@ -11,9 +11,9 @@ const Register = () => {
   const dispatch = useDispatch();
 
   const [values, setValues] = React.useState({
-    nickname: "TestName",
-    email: "ilyafomin9284@mail.ru",
-    password: "12345678",
+    nickname: "",
+    email: "",
+    password: "",
   });
 
   const onSubmit = async (e) => {
@@ -47,6 +47,7 @@ const Register = () => {
           }}
           value={values.nickname}
           placeholder="Name"
+          minLength={3}
         />
         <input
           type="email"
